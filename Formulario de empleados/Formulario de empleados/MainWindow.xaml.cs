@@ -132,7 +132,7 @@ namespace Formulario_de_empleados
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-
+            Application.Current.Shutdown();
         }
 
         public class Empleado

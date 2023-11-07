@@ -60,9 +60,9 @@
 
             <!-- Campo Fecha de nacimiento -->
             <TextBlock Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" Text="Fecha de nacimiento*"
-                       Margin="35,11,0,9" HorizontalAlignment="Left" TextWrapping="Wrap" Width="91" Height="32"/>
+                       Margin="35,9,0,10" HorizontalAlignment="Left" TextWrapping="Wrap" Width="91" Height="35"/>
             <DatePicker SelectedDateFormat="Long" HorizontalAlignment="Left"
-                        Margin="0,10,0,10" Grid.Row="6" Grid.Column="1" Width="145"/>
+                        Margin="0,10,0,20" Grid.Row="6" Grid.Column="1" Width="250"/>
 
             <!-- Campo DNI-->
             <TextBlock Grid.Row="7" Grid.Column="0" VerticalAlignment="Center" Text="DNI"
@@ -84,16 +84,16 @@
                 <TextBox Name="txtDireccion" Grid.Row="9" Grid.Column="1" Margin="0,0,0,5" HorizontalAlignment="Left"
                      VerticalAlignment="Center" VerticalContentAlignment="Center" Width="250"
                      Text="Dirección" Height="18" LostFocus="Txt_LostFocus" GotFocus="Txt_GotFocus"/>
-                <TextBox Grid.Row="10" Grid.Column="1" Margin="0,0,0,0" HorizontalAlignment="Left"
+                <TextBox Name="txtCiudad" Grid.Row="10" Grid.Column="1" Margin="0,0,0,0" HorizontalAlignment="Left"
                      VerticalAlignment="Center" VerticalContentAlignment="Center" Width="250"
                      Text="Ciudad" Height="18" LostFocus="Txt_LostFocus" GotFocus="Txt_GotFocus"/>
-                <TextBox Grid.Row="11" Grid.Column="1" Margin="0,6,0,0" HorizontalAlignment="Left"
+                <TextBox Name="txtProvincia" Grid.Row="11" Grid.Column="1" Margin="0,6,0,0" HorizontalAlignment="Left"
                      VerticalAlignment="Center" VerticalContentAlignment="Center" Width="250"
                      Text="Provincia" Height="18" LostFocus="Txt_LostFocus"  GotFocus="Txt_GotFocus"/>
-                <TextBox Grid.Row="12" Grid.Column="1" Margin="0,5,0,0" HorizontalAlignment="Left"
+                <TextBox Name="txtCodigoPostal" Grid.Row="12" Grid.Column="1" Margin="0,5,0,0" HorizontalAlignment="Left"
                      VerticalAlignment="Center" VerticalContentAlignment="Center" Width="250"
                      Text="Código Postal" Height="18" LostFocus="Txt_LostFocus"  GotFocus="Txt_GotFocus"/>
-                <TextBox Grid.Row="12" Grid.Column="1" Margin="0,5,0,0" HorizontalAlignment="Left"
+                <TextBox Name="txtPais" Grid.Row="12" Grid.Column="1" Margin="0,5,0,0" HorizontalAlignment="Left"
                      VerticalAlignment="Center" VerticalContentAlignment="Center" Width="250"
                      Text="País" Height="18" LostFocus="Txt_LostFocus"  GotFocus="Txt_GotFocus"/>
             </StackPanel>
@@ -105,7 +105,7 @@
                        Margin="35,18,0,6"></TextBlock>
             <TextBox Grid.Row="10" Grid.Column="1" Margin="15,18,20,5" 
                      VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
-            
+
             <!-- Rol actual -->
             <TextBlock Text="Rol actual" Grid.Row="11" Grid.Column="0"
                        Margin="35,8,0,6"></TextBlock>
@@ -113,14 +113,14 @@
                 <ComboBoxItem Content="Desarrollador"></ComboBoxItem>
                 <ComboBoxItem Content="Analista"></ComboBoxItem>
             </ComboBox>
-            
+
             <!-- Descripción del puesto de trabajo actual -->
             <TextBlock Text="Descripción del puesto de trabajo actual"
                        Grid.Row="12" Grid.ColumnSpan="2" VerticalAlignment="Center"
                        Margin="35,12,0,0"></TextBlock>
             <TextBox Grid.Row="13" Height="70" Margin="35,12,0,15" Grid.ColumnSpan="2"
                      Width="550" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBox>
-            
+
             <!-- Botones guardar y cancelar -->
             <StackPanel Orientation="Horizontal" Grid.Row="14" Grid.ColumnSpan="2" HorizontalAlignment="Center">
                 <Button HorizontalAlignment="Center" Height="35"
@@ -128,7 +128,7 @@
                 <Button HorizontalAlignment="Center" Height="35"
                     Margin="20,0,0,15" Width="100" Click="Button_Click_2">Cancelar</Button>
             </StackPanel>
-            
+
             <!-- DataGrid -->
             <DataGrid Grid.Row="15" Grid.ColumnSpan="2" Margin="35,10,50,12" Name="dataGrid">
                 <DataGrid.Columns></DataGrid.Columns>
