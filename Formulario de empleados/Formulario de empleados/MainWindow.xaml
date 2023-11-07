@@ -39,23 +39,23 @@
             <!-- Campo nombre -->
             <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Text="Nombre*"
                        Margin="35,7,0,6" HorizontalAlignment="Left" Height="16" Width="49"/>
-            <TextBox Grid.Row="2" Grid.Column="1" Margin="0,6,0,5" Width="300" HorizontalAlignment="Left"/>
+            <TextBox Name="txtNombre" Grid.Row="2" Grid.Column="1" Margin="0,6,0,5" Width="300" HorizontalAlignment="Left"/>
 
             <!-- Campo apellidos -->
             <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Text="Apellidos"
                        Margin="35,7,0,6" HorizontalAlignment="Left" Height="16" Width="49"/>
-            <TextBox Grid.Row="3" Grid.Column="1" Margin="0,6,0,5" Width="300" HorizontalAlignment="Left"/>
+            <TextBox Name="txtApellidos" Grid.Row="3" Grid.Column="1" Margin="0,6,0,5" Width="300" HorizontalAlignment="Left"/>
 
             <!-- Campo E-mail -->
             <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Text="E-mail*"
                        Margin="35,7,0,6" HorizontalAlignment="Left" Height="16" Width="38"/>
-            <TextBox Grid.Row="4" Grid.Column="1" Margin="0,6,0,5" HorizontalAlignment="Left"
+            <TextBox Name="txtEmail" Grid.Row="4" Grid.Column="1" Margin="0,6,0,5" HorizontalAlignment="Left"
                      VerticalAlignment="Center" VerticalContentAlignment="Center" Width="300" Height="18"/>
 
             <!-- Campo Teléfono -->
             <TextBlock Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" Text="Teléfono*"
                        Margin="35,7,0,6" HorizontalAlignment="Left" Height="16" Width="50"/>
-            <TextBox Grid.Row="5" Grid.Column="1" Margin="0,6,0,5" HorizontalAlignment="Left"
+            <TextBox Name="txtTelefono" Grid.Row="5" Grid.Column="1" Margin="0,6,0,5" HorizontalAlignment="Left"
                      VerticalAlignment="Center" VerticalContentAlignment="Center" Width="150" Height="18"/>
 
             <!-- Campo Fecha de nacimiento -->
@@ -83,19 +83,19 @@
                         Margin="0,15,0,0">
                 <TextBox Name="txtDireccion" Grid.Row="9" Grid.Column="1" Margin="0,0,0,5" HorizontalAlignment="Left"
                      VerticalAlignment="Center" VerticalContentAlignment="Center" Width="250"
-                     Height="18" LostFocus="Txt_LostFocus"/>
+                     Text="Dirección" Height="18" LostFocus="Txt_LostFocus" GotFocus="Txt_GotFocus"/>
                 <TextBox Grid.Row="10" Grid.Column="1" Margin="0,0,0,0" HorizontalAlignment="Left"
                      VerticalAlignment="Center" VerticalContentAlignment="Center" Width="250"
-                     Text="Ciudad" Height="18" LostFocus="Txt_LostFocus"/>
+                     Text="Ciudad" Height="18" LostFocus="Txt_LostFocus" GotFocus="Txt_GotFocus"/>
                 <TextBox Grid.Row="11" Grid.Column="1" Margin="0,6,0,0" HorizontalAlignment="Left"
                      VerticalAlignment="Center" VerticalContentAlignment="Center" Width="250"
-                     Text="Provincia" Height="18" LostFocus="Txt_LostFocus"/>
+                     Text="Provincia" Height="18" LostFocus="Txt_LostFocus"  GotFocus="Txt_GotFocus"/>
                 <TextBox Grid.Row="12" Grid.Column="1" Margin="0,5,0,0" HorizontalAlignment="Left"
                      VerticalAlignment="Center" VerticalContentAlignment="Center" Width="250"
-                     Text="Código Postal" Height="18" LostFocus="Txt_LostFocus"/>
+                     Text="Código Postal" Height="18" LostFocus="Txt_LostFocus"  GotFocus="Txt_GotFocus"/>
                 <TextBox Grid.Row="12" Grid.Column="1" Margin="0,5,0,0" HorizontalAlignment="Left"
                      VerticalAlignment="Center" VerticalContentAlignment="Center" Width="250"
-                     Text="País" Height="18" LostFocus="Txt_LostFocus"/>
+                     Text="País" Height="18" LostFocus="Txt_LostFocus"  GotFocus="Txt_GotFocus"/>
             </StackPanel>
             <Image Source="companySlogan.png" Grid.Row="9" Grid.Column="1" Width="120" HorizontalAlignment="Right"
                    Margin="0,0,100,0"/>
@@ -130,13 +130,8 @@
             </StackPanel>
             
             <!-- DataGrid -->
-            <DataGrid Grid.Row="15" Grid.ColumnSpan="2" Margin="35,10,50,12">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Width="100" Header="Nombre" Binding="{Binding XPath=@nombre}" FontFamily="Arial" FontStyle="Italic" />
-                    <DataGridTextColumn Width="200" Header="Apellidos" Binding="{Binding XPath=@apellidos}" FontFamily="Arial" FontWeight="Bold" />
-                    <DataGridTextColumn Width="100" Header="E-mail" Binding="{Binding XPath=@email}" FontFamily="Arial" FontWeight="Bold" />
-                    <DataGridTextColumn Width="*" Header="Teléfono" Binding="{Binding XPath=@telefono}" FontFamily="Arial" FontWeight="Bold" />
-                </DataGrid.Columns>
+            <DataGrid Grid.Row="15" Grid.ColumnSpan="2" Margin="35,10,50,12" Name="dataGrid">
+                <DataGrid.Columns></DataGrid.Columns>
             </DataGrid>
         </Grid>
     </ScrollViewer>

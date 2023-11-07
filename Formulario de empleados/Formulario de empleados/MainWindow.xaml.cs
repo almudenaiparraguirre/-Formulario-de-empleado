@@ -21,9 +21,38 @@ namespace Formulario_de_empleados
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<Empleado> empleados = new List<Empleado>();
         public MainWindow()
         {
             InitializeComponent();
+            dataGrid.ItemsSource = empleados;
+
+            dataGrid.AutoGeneratingColumn += (sender, e) =>
+            {
+                // Cambia los anchos de las columnas según sea necesario
+                if (e.PropertyName == "Nombre")
+                {
+                    e.Column.Width = 200; // Columna Nombre ocupa el espacio restante
+                }
+                else if (e.PropertyName == "Apellidos")
+                {
+                    e.Column.Width = 350; // Establece el ancho de la columna Apellidos a 200
+                }
+                else if (e.PropertyName == "Email")
+                {
+                    e.Column.Width = 200; // Establece el ancho de la columna Email a 150
+                }
+                else if (e.PropertyName == "Telefono")
+                {
+                    e.Column.Width = new DataGridLength(1, DataGridLengthUnitType.Star); // Establece el ancho de la columna Teléfono a 100
+                }
+            };
+        }
+
+        private void AgregarEmpleado(string nombre, string apellidos, string email, string telefono)
+        {
+            empleados.Add(new Empleado { Nombre = nombre, Apellidos = apellidos, Email = email, Telefono = telefono});
+            dataGrid.Items.Refresh(); // Actualizar el DataGrid
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -35,7 +64,6 @@ namespace Formulario_de_empleados
             {
                 try
                 {
-                    // Carga la imagen seleccionada en el control de imagen
                     BitmapImage bitmapImage = new BitmapImage(new Uri(openFileDialog.FileName));
                     imagenPrevisualizacion.Source = bitmapImage;
                 }
@@ -76,14 +104,44 @@ namespace Formulario_de_empleados
             }
         }
 
+        private void Txt_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                if (textBox.Text == "Dirección" || textBox.Text == "Ciudad" || textBox.Text == "Provincia" || textBox.Text == "Código Postal" || textBox.Text == "País")
+                {
+                    textBox.Clear();
+                }
+            }
+        }
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            string nombre = txtNombre.Text;
+            string apellidos = txtApellidos.Text;
+            string email = txtEmail.Text;
+            string telefono = txtTelefono.Text;
 
+            AgregarEmpleado(nombre, apellidos, email, telefono);
+
+            txtNombre.Clear();
+            txtApellidos.Clear();
+            txtEmail.Clear();
+            txtTelefono.Clear();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        public class Empleado
+        {
+            public string Nombre { get; set; }
+            public string Apellidos { get; set; }
+            public string Email { get; set; }
+
+            public string Telefono { get; set; }
         }
     }
 }
