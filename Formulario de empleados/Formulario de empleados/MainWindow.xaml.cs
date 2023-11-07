@@ -46,6 +46,36 @@ namespace Formulario_de_empleados
             }
         }
 
+        private void Txt_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    if (textBox.Name == "txtDireccion")
+                    {
+                        textBox.Text = "Dirección";
+                    }
+                    else if (textBox.Name == "txtCiudad") 
+                    {
+                        textBox.Text = "Ciudad";
+                    }
+                    else if (textBox.Name == "txtProvincia")
+                    {
+                        textBox.Text = "Provincia";
+                    }
+                    else if (textBox.Name == "txtCodigoPostal")
+                    {
+                        textBox.Text = "Codigo postal";
+                    }
+                    else if (textBox.Name == "txtPais")
+                    {
+                        textBox.Text = "País";
+                    }
+                }
+            }
+        }
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
