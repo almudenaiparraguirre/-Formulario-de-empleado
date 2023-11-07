@@ -83,7 +83,7 @@
                         Margin="0,15,0,0">
                 <TextBox Name="txtDireccion" Grid.Row="9" Grid.Column="1" Margin="0,0,0,5" HorizontalAlignment="Left"
                      VerticalAlignment="Center" VerticalContentAlignment="Center" Width="250"
-                     Text="Dirección" Height="18" LostFocus="Txt_LostFocus"/>
+                     Height="18" LostFocus="Txt_LostFocus"/>
                 <TextBox Grid.Row="10" Grid.Column="1" Margin="0,0,0,0" HorizontalAlignment="Left"
                      VerticalAlignment="Center" VerticalContentAlignment="Center" Width="250"
                      Text="Ciudad" Height="18" LostFocus="Txt_LostFocus"/>
